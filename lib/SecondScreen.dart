@@ -23,6 +23,9 @@ class _SecondScreenState extends State<SecondScreen> {
                final int selected = await Navigator.of(context).push(MaterialPageRoute(builder: (c) {
                   return ThirdScreen(position);
                 }));
+               Scaffold.of(context).showSnackBar(new SnackBar(
+                 content: new Text("$selected"),
+               ));
               },
             );
           },
