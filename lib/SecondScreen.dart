@@ -10,9 +10,7 @@ class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Second Screen"),
-        ),
+
         body: ListView.builder(
           itemBuilder: (context, position) {
             return ListTile(
@@ -21,7 +19,7 @@ class _SecondScreenState extends State<SecondScreen> {
               subtitle: Text("Subtitle $position"),
               onTap: () async{
                final int selected = await Navigator.of(context).push(MaterialPageRoute(builder: (c) {
-                  return ThirdScreen(position);
+                  return ThirdScreen(position: position);
                 }));
                Scaffold.of(context).showSnackBar(new SnackBar(
                  content: new Text("$selected"),
@@ -32,16 +30,6 @@ class _SecondScreenState extends State<SecondScreen> {
           itemCount: 20,
           reverse: true,
         )
-        /*ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),
-          ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),
-          ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),
-          ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),
-          ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),
-          ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),
-          ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),
-          ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),
-          ListTile(title: Text("Element"),leading:  Icon(Icons.account_circle), subtitle: Text("Subtitulo"),),*/
-
-        );
+    );
   }
 }

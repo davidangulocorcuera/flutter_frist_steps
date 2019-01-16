@@ -7,7 +7,7 @@ class ThirdScreen extends StatefulWidget {
   @override
   _ThirdScreenState createState() => _ThirdScreenState();
 
-  ThirdScreen(this.position);
+  ThirdScreen({this.position});
 }
 
 class _ThirdScreenState extends State<ThirdScreen> {
